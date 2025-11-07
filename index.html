@@ -14,31 +14,35 @@
 <br>
 <input type="text" id="name" class="text-center" name="name" required><label for="name" class="text-white display-6 "  >:  מי מזמין</label>
             
-            <p>ברוך הבא לאתר הזמנת עוגיות תוצרת בית - יפה יעקב</p>
+            <p>Welcome to the homemade cookie ordering website</p>
             
                 <hr>
-        <p class="main">.שמחים שחזרת לקנות ממגוון העוגיות והסגונונות , הבחירה תשלח ישירות אל הוואטצאפ בהודעה</p>
+        <p class="main">We’re happy to see you back to choose from our variety of cookies and flavors.ֿֿֿֿ</p>
     </header>
     <h2 id="h2" class="text-white text-center col-sm-10 " >hello</h2>
     <div id="container" class="container" >
         <div class="row col-md-12 col-sm-4 col-lg-12 ">
             <div class="col-lg-4 col-sm-12">
                 <div class="card">
+                    
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUq-1biyj-fG8_YxsDGboV-MI_jvmMkKeLt7wO454tKouR8J3bk5aT20tO8iDSv2c52WM&usqp=CAU"  alt="מלוחות">
                     <div class="card-body">
-                        <h3 class="card-title">עוגיות מלוחות</h3>
+                        <h3 class="card-title">Savory Cookies</h3>
                         <p class="card-text"><input id="saltCque" type='number' min='0' max='30' step='5' placeholder='0'> : כמות</p>
-                        <h3>סה"כ : <span id='numSlat'>0</span></h3>
+                        <h3>Total : <span id='numSlat'>0</span></h3>
+                        
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-12">
                 <div class="card">
+                    
                     <img src="ML.jpeg" alt="מכונה">
                     <div class="card-body">
-                        <h3 class="card-title">עוגיות מכונה</h3>
+                        <h3 class="card-title">Machine Cookies</h3>
                         <p class="card-text"><input id="Mque" type='number' min='0' max='30' step='5' placeholder='0'> : כמות</p>
                         <h3>סה"כ : <span id='numMachine'>0</span></h3>
+                        
                     </div>
                 </div>
             </div>
@@ -47,25 +51,26 @@
                     
                     <img src="תמרים.jpeg"  alt="תמרים/שוקולד">
                     <div class="card-body">
-                        <h3 class="card-title">מגולגלות</h3>
+                        <h3 class="card-title">Rolled Cookies</h3>
                         <p class="card-text"><input id="Rque" type='number' min='0' max='30' step='5' placeholder='0'> : כמות</p>
                         <p>
                             <select id="selectMenu" >
-                    <option value="שוקולד">שוקולד</option>
-                    <option value="תמרים">תמרים</option> </select> : מילוי
-                        <h3>סה"כ : <span id='numRoll'>0</span></h3>
+                    <option value="שוקולד">Chocolate</option>
+                    <option value="תמרים">Dates</option> </select> : מילוי
+                        <h3>Total : <span id='numRoll'>0</span></h3>
+                            
                     </div>
                 </div>
             </div>
             <div id='totalprice'  class="col-md-12 col-sm-12 col-lg-12"  >
-                    <h4>תשלום : <span id='totalPrice'>0</span></h4>
+                    <h4>Payment : <span id='totalPrice'>0</span></h4>
                 <div>
-            <button class='btn text-black text-center btn-lg-1' style='width=380px;' id='sendmassage' '>שלח הודעה בוואטצאפ</button>
+            <button class='btn text-black text-center btn-lg-1' style='width=380px;' id='sendmassage' '>Send Whatsapp message (NOT WORKING - PRIVACY)</button>
         </div>
     </div>
     
     <footer id="footer" class="text-white text-center py-3" >
-        <p>&copy; 2024 - All rights reserved</p>
+        <p>&copy; AUTHER : SAHAR 2024 - All rights reserved</p>
     </footer>
     
 
@@ -125,22 +130,26 @@
     }
     function sendM(x){
         var tasty = document.getElementById('selectMenu').value;
-        const phoneNum = '972524738622';
+        /*
+          Enter the phone number here
+          This will be used to send the WhatsApp message
+        */
+        const phoneNum = '';
         
         let Rque = document.getElementById('Rque').value;
         let Mque = document.getElementById('Mque').value;
         let saltCque = document.getElementById('saltCque').value;
         let username = document.getElementById('name').value;
         
-        let message = `${x} ,
-        שלום יפה , 
-אני רוצה להזמין : 
-, עוגיות מלוחות ${saltCque} יחידות 
-, עוגיות מכונה ${Mque} יחידות 
-. עוגיות מגולגלות ${Rque} יחידות בטעם ${tasty} 
-העלות הכוללת היא ${totalPrice} ש"ח. 
-עבור ${username}
-  תודה!` ;
+let message = `${x},
+Hello,  
+I would like to order:  
+- Savory Cookies: ${saltCque} units  
+- Machine Cookies: ${Mque} units  
+- Rolled Cookies: ${Rque} units with ${tasty} filling  
+The total price is ${totalPrice} ILS.  
+For ${username}  
+Thank you!`;
 
 // קידוד ההודעה למטרת URL
     const encodedMessage = encodeURIComponent(message);
@@ -193,3 +202,4 @@ document.getElementById('sendmassage').addEventListener('click', function() {
     </script>
 </body>
 </html>
+
